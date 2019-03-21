@@ -27,10 +27,10 @@ class Home extends StatelessWidget {
             backgroundColor: Colors.grey[100],
             appBar: AppBar(
               // 导航左边的叫做leading
-              leading: IconButton(
+              /*leading: IconButton(
                   icon: Icon(Icons.menu),
                   tooltip: 'Navigation',
-                  onPressed: () => debugPrint('pressed')),
+                  onPressed: () => debugPrint('pressed')),*/
               title: Text('HELLO'),
               elevation: 0,
               // 阴影
@@ -68,24 +68,36 @@ class Home extends StatelessWidget {
               child: ListView(
                 padding: EdgeInsets.zero,
                 children: <Widget>[
-                  DrawerHeader(
+                  /*DrawerHeader(
                     child: Text('header'.toUpperCase()),
                     decoration: BoxDecoration(color: Colors.grey[100]),
+                  ),*/
+                  UserAccountsDrawerHeader(
+                    accountName: Text('wuding',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    accountEmail: Text('wuding129@163.com'),
+                    currentAccountPicture: CircleAvatar(
+                      backgroundImage: NetworkImage(
+                          'https://cdn4.buysellads.net/uu/1/42500/1546351188-1538062800-80x80-hotjar-icon.png'),
+                    ),
                   ),
                   ListTile(
                     title: Text('Messages', textAlign: TextAlign.right),
                     trailing:
                         Icon(Icons.message, color: Colors.black12, size: 22.0),
+                    onTap: () => Navigator.pop(context),
                   ),
                   ListTile(
                     title: Text('Favorite', textAlign: TextAlign.right),
                     trailing:
                         Icon(Icons.favorite, color: Colors.black12, size: 22.0),
+                    onTap: () => Navigator.pop(context),
                   ),
                   ListTile(
                     title: Text('Settings', textAlign: TextAlign.right),
                     trailing:
                         Icon(Icons.settings, color: Colors.black12, size: 22.0),
+                    onTap: () => Navigator.pop(context),
                   ),
                 ],
               ),
